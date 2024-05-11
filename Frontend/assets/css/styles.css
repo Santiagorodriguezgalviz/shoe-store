@@ -1,0 +1,302 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(45deg, #b5b0ae 0%, #191e28 100%); /* Ajuste de los colores aquí */
+  background-size: 200% 200%;  
+  height: 100%;
+  width: 100%;
+  animation: background 6s ease infinite;
+}
+
+@keyframes background { 
+  0% {
+    background-position: 0% 50%;
+  }
+  
+  50% {
+    background-position: 100% 50%;
+  }
+  
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Agrega el segundo bloque de CSS aquí */
+#iframeContainer {
+  top: 40%;
+  display: flex; 
+  flex-direction: column; 
+  min-height: calc(100vh - 50px); 
+}
+
+#contentFrame {
+  flex-grow: 1; 
+  border: none; 
+}
+.btn-secundary{
+  background-color: red;
+}
+.btn-primary{
+  background-color: blue;
+}
+
+.new{
+  position: relative;
+  float: right;
+  height: 43px;
+  color: rgb(62, 102, 111);
+}
+
+
+#iframeContainer {
+  width: 100%;
+}
+
+#iframeContainer .iframe {
+  width: 100%;
+  border: none;
+}
+
+.btn-close{
+  background-color: red;
+}
+
+button[name="btnAgregar"]:hover {
+  /* Estilos al pasar el mouse sobre el botón */
+  background-color: #1ed30e; /* Color de fondo más oscuro */
+}
+
+button[name="btnCloced"]:hover{
+  background-color: red;
+}
+
+.ui-autocomplete{
+  z-index: 9999 !important;
+ }
+
+/*Customer*/
+.container-fluid .row > div {
+  margin-bottom: 10px;  /* Espacio entre los campos si se envuelven en pantallas más pequeñas */
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 62px;
+  height: 35px;
+}
+ 
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 1;
+  width: 0;
+  height: 0;
+}
+ 
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  background: #fff;
+  transition: .4s;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+}
+ 
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.9em;
+  width: 1.9em;
+  border-radius: 16px;
+  left: 1.2px;
+  top: 0;
+  bottom: 0;
+  background-color: white;
+  box-shadow: 0 2px 5px #999999;
+  transition: .4s;
+}
+ 
+input:checked + .slider {
+  background-color: #5fdd54;
+  border: 1px solid transparent;
+}
+ 
+input:checked + .slider:before {
+  transform: translateX(1.5em);
+}
+
+button[name="btnAgregar1"] {
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(100, 61, 136);
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 1em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+}
+
+button[name="btnAgregar"]::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: .7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+button[name="btnAgregar"]:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 2em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+}
+
+button[name="btnAgregar"]:active {
+  box-shadow: 0 0 0.6em .25em var(--glow-color),
+         0 0 2.5em 2em var(--glow-spread-color),
+         inset 0 0 .5em .25em var(--glow-color);
+}
+
+/* Estilo del botón Agregar al pasar el cursor sobre él */
+/* Estilo del botón Agregar */
+button[name="btnAgregar"] {
+  color: white; /* Color del texto */
+  background-color: grey; /* Color de fondo gris por defecto */
+  border-color: grey; /* Color del borde gris por defecto */
+}
+
+/* Estilo del botón Agregar al pasar el cursor sobre él */
+button[name="btnAgregar"]:hover {
+  background-color: rgb(53, 212, 25); /* Cambia el color de fondo a verde */
+  border-color: rgb(33, 199, 33); /* Cambia el color del borde a verde */
+}
+
+.modal-content {
+  box-shadow: 0 0 20px rgba(121, 115, 115, 0.2); /* Sombra suave */
+  transition: box-shadow 0.3s ease; /* Transición suave */
+}
+
+.modal-content:hover {
+  box-shadow: 0 0 30px rgba(97, 94, 94, 0.4); /* Aumenta la intensidad de la sombra */
+}
+
+.btn-primary1 {
+  background-color: #000;
+  border: 0px;
+  outline: 0px;
+  color: #fff;
+  width: 200px;
+  padding: 20px;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.liquid {
+  background-color: #455b6d;
+  width: 200px;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-shadow: inset 5px -5px 25px #253644,
+  inset -5px 0px 25px #364048;
+}
+
+.liquid::after {
+  content: '';
+  width: 450px;
+  height: 400px;
+  background: #2b2929;
+  z-index: 1;
+  position: absolute;
+  left: -110px;
+  top: -380px;
+  border-radius: 45%;
+  animation: animate 5s linear 2s infinite;
+}
+
+.liquid::before {
+  content: '';
+  width: 450px;
+  height: 400px;
+  background-color: rgb(51, 68, 81);
+  z-index: 1;
+  position: absolute;
+  left: -110px;
+  top: -380px;
+  border-radius: 40%;
+  animation: animate 5s linear 1.8s infinite;
+}
+
+.btn-txt {
+  position: relative;
+  z-index: 1;
+  font-size: 22px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+}
+
+@keyframes animate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.btn-primary1 {
+  background-color: #000;
+  border: 0px;
+  outline: 0px;
+  color: #fff;
+  width: 200px;
+  height: 70px; /* Ajusta la altura según sea necesario */
+  padding: 20px;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+  right: 20px; /* Ajusta la distancia desde el lado derecho */
+  overflow: hidden;
+  cursor: pointer;
+}
+

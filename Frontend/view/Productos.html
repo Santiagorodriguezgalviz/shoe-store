@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <legend>Productos</legend>
+        <!-- Botón de registrar movido más cerca de la tabla -->
+        <div class="row">
+            <div class="col-12" style="text-align: right; padding-top: 100px;">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Registrar
+                </button>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="spacer" style="height: 20px;"></div>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="width: 140%; height: 150%; ">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Agregar Nuevo Producto</h1>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div id="inputdata">
+                                <form class="row g-3 needs-validation" novalidate>
+                                    <fieldset class="formulario">
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label class="col-form-label">Nombre: </label>
+                                                <input type="hidden" name="id" id="id" value="">
+                                                <input type="text" class="form-control" name="nombre" id="nombre"
+                                                    value="" required placeholder="Ingrese primer nombre">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label class="col-form-label">Descripcion: </label>
+                                                <input type="text" class="form-control" name="descripcion" id="descripcion"
+                                                    value="" required placeholder="Ingrese descripcion">
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label class="col-form-label">Cantidad: </label>
+                                                <input type="number" class="form-control" name="cantidad" id="cantidad"
+                                                    value="" required placeholder="Ingrese cantidad">
+                                            </div>
+
+                                                <div class="col-md-6">
+                                                    <label class="col-form-label">Precio: </label>
+                                                    <input type="number" class="form-control" name="precio" id="precio"
+                                                        value="" required placeholder="Ingrese precio" step="0.01" min="0">
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <label class="col-form-label">IVA (%): </label>
+                                                    <input type="number" class="form-control" name="iva" id="iva"
+                                                        value="" required placeholder="Ingrese IVA" min="0" max="100" step="0.01">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label class="col-form-label">Descuento (%): </label>
+                                                    <input type="number" class="form-control" name="descuento" id="descuento"
+                                                        value="" required placeholder="Ingrese descuento" min="0" max="100" step="0.01">
+                                                </div>
+                                            </div>
+                                            
+
+                                                <!-- State centered -->
+                                        <div class="row mb-3">
+                                            <div class="col-md-12">
+                                                <label class="form-label">Estado: </label>
+                                                <select class="form-select" id="estado">
+                                                    <option selected>-- Select --</option>
+                                                    <option value="1">Activo</option>
+                                                    <option value="0">Inactivo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" name="btnCloced" class="btn btn-secondary" data-bs-dismiss="modal"
+                                onclick="clearData()">Cerrar</button>
+                            <br>
+                            <button name="btnAgregar" class="btn btn-primary" type="button" onclick="save()"
+                                data-bs-dismiss="modal">Agregar Producto</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">Nombre Producto</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">% IVA</th>
+                    <th scope="col">% Descuento</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider" id="resultData">
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Script personalizado para funcionalidades específicas de 'Clientes' -->
+    <script src="/js//Productos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Incluir SweetAlert2 desde un CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </script>
+    <script>
+        loadData();
+    </script>
+</body>
+
+</html>
+                                            
+                                        

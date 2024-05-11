@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Cliente</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form class="row g-3 needs-validation" novalidate>
+                    <fieldset class="formulario">
+                        <div class="mb-3">
+                            <label class="form-label">Tipo de identificación:</label>
+                            <select class="form-select" id="tipo_identificacion" required>
+                                <!-- Las opciones serán generadas dinámicamente por JavaScript -->
+                            </select>
+                            <div class="invalid-feedback">Por favor selecciona un tipo de identificación.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Identificación:</label>
+                            <input type="text" maxlength="10" class="form-control" name="identificacion" id="identificacion" value="" required placeholder="Ingrese identificación">
+                            <div class="invalid-feedback">Por favor ingresa la identificación.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" name="nombre" id="nombre" value="" required placeholder="Ingrese primer nombre">
+                            <div class="invalid-feedback">Por favor ingresa el nombre.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Apellido:</label>
+                            <input type="text" class="form-control" name="apellido" id="apellido" value="" required placeholder="Ingrese apellido">
+                            <div class="invalid-feedback">Por favor ingresa el apellido.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono:</label>
+                            <input type="text" class="form-control" name="telefono" id="telefono" value="" required placeholder="Ingrese número de teléfono">
+                            <div class="invalid-feedback">Por favor ingresa el número de teléfono.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Dirección:</label>
+                            <input type="text" class="form-control" name="direccion" id="direccion" value="" required placeholder="Ingrese dirección">
+                            <div class="invalid-feedback">Por favor ingresa la dirección.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Ciudad:</label>
+                            <input type="text" class="form-control" name="ciudad" id="ciudad" value="" required placeholder="Ingrese ciudad">
+                            <div class="invalid-feedback">Por favor ingresa la ciudad.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Estado:</label>
+                            <select class="form-select" id="estado" required>
+                                <option value="">-- Seleccione --</option>
+                                <option value="1">Activo</option>
+                                <option value="0">Inactivo</option>
+                            </select>
+                            <div class="invalid-feedback">Por favor seleccione el estado.</div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Agregar Cliente</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+<script>
+    loadData();
+    loadTiposIdentificacion();
+    loadDireccion();
+</script>
+</html>
